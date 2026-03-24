@@ -1,2 +1,2 @@
 # rocks-rock-Game
- educational vr game about rocks
+ Educational vr game about rocks
