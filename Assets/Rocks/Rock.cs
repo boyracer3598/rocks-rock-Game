@@ -6,18 +6,20 @@ using System.Runtime.CompilerServices;
 
 public class Rock : MonoBehaviour
 {
-    public string RockName;
-    public string RockType;
-    public string WorldRegion;
-    public string Composition;
-    public double Density;
-    public int MeltingPoint;
-    [SerializeField] public string fileName = "test";
+    string RockName { get; set; }
+    string RockType { get; set; }
+    string WorldRegion { get; set; }
+    string Composition { get; set; }
+    double Density { get; set; }
+    int MeltingPoint { get; set; }
+    [SerializeField] string fileName = "test";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        string filePath = "Assets/Rocks/Data/" + fileName + ".json";
-        string[] fileText = File.ReadAllLines(filePath);
+        string filePathJson = "Assets/Rocks/Data/" + fileName + ".json";
+        string filePathMesh = "Assets/Rocks/models" + fileName + ".obj";
+        string filePathMaterial = "Assets/Rocks/Materials" + fileName + ".mat";
+        string[] fileText = File.ReadAllLines(filePathJson);
         string fileTextOneLine = "";
         for (int i = 0; i < fileText.Length; i++)
         {
@@ -30,11 +32,18 @@ public class Rock : MonoBehaviour
         this.Composition = temp.Composition;
         this.Density = temp.Density;
         this.MeltingPoint = temp.MeltingPoint;
-        Debug.Log(RockName + ", " + RockType + ", " + WorldRegion + ", " + Composition + ", " + Density + ", " + MeltingPoint);
+        // Debug.Log(RockName + ", " + RockType + ", " + WorldRegion + ", " + Composition + ", " + Density + ", " + MeltingPoint);
+        Material materialToChange = this.gameObject.transform.GetChild(0).GetComponent<Renderer>().material;
+        MeshFilter meshToChange = this.gameObject.GetComponent<MeshFilter>();
+        if (materialToChange.name != this.RockName) //|| meshToChange.name != this.RockName
+        {
+            materialToChange = (Material)Resources.Load(filePathMaterial);
+            meshToChange.sharedMesh = (Mesh)Resources.Load(filePathMesh);
+        }
     }
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
