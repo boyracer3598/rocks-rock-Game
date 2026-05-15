@@ -6,13 +6,13 @@ using System.Runtime.CompilerServices;
 
 public class Rock : MonoBehaviour
 {
-    string RockName { get; set; }
-    string RockType { get; set; }
-    string WorldRegion { get; set; }
-    string Composition { get; set; }
-    double Density { get; set; }
-    int MeltingPoint { get; set; }
-    [SerializeField] string fileName = "test";
+    public string RockName { get; private set; }
+    public string RockType { get; private set; }
+    public string WorldRegion { get; private set; }
+    public string Composition { get; private set; }
+    public double Density { get; private set; }
+    public int MeltingPoint { get; private set; }
+    [SerializeField] public string fileName = "test";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
