@@ -14947,7 +14947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56385d07618d99c44be95bea2cc1d09e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56385d07618d99c44be95bea2cc1d09e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14987,7 +14987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 56385d07618d99c44be95bea2cc1d09e, type: 3}
       propertyPath: m_Name
-      value: Pumice
+      value: Render
       objectReference: {fileID: 0}
     - target: {fileID: 8164078558771037576, guid: 56385d07618d99c44be95bea2cc1d09e, type: 3}
       propertyPath: m_IsActive
@@ -18282,12 +18282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89bf18677236938458918793d66edada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JsonRegistry
-  RockName: Coal
-  RockType: 
-  WorldRegion: 
-  Composition: 
-  Density: 0
-  MeltingPoint: 0
   fileName: Coal
 --- !u!1001 &6242179681828506539
 PrefabInstance:
@@ -18397,15 +18391,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4803614339566677342, guid: 72138a47ec7b8714c91aa39dcdf3b714, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 4803614339566677342, guid: 72138a47ec7b8714c91aa39dcdf3b714, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.114
+      value: 0.669
       objectReference: {fileID: 0}
     - target: {fileID: 4803614339566677342, guid: 72138a47ec7b8714c91aa39dcdf3b714, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.441
       objectReference: {fileID: 0}
     - target: {fileID: 4803614339566677342, guid: 72138a47ec7b8714c91aa39dcdf3b714, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18435,6 +18429,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6106231000591474395, guid: 72138a47ec7b8714c91aa39dcdf3b714, type: 3}
+      propertyPath: m_Renderer
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6640387835271095783, guid: 72138a47ec7b8714c91aa39dcdf3b714, type: 3}
       propertyPath: m_Name
       value: rock pickup
@@ -18446,6 +18444,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7610848028711754152, guid: 72138a47ec7b8714c91aa39dcdf3b714, type: 3}
+    - {fileID: 4236228170059728837, guid: 72138a47ec7b8714c91aa39dcdf3b714, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4803614339566677342, guid: 72138a47ec7b8714c91aa39dcdf3b714, type: 3}
       insertIndex: 0

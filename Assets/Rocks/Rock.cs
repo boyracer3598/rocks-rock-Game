@@ -17,8 +17,8 @@ public class Rock : MonoBehaviour
     void Start()
     {
         string filePathJson = "Assets/Rocks/Data/" + fileName + ".json";
-        string filePathMesh = "Assets/Rocks/models" + fileName + ".obj";
-        string filePathMaterial = "Assets/Rocks/Materials" + fileName + ".mat";
+        string filePathMesh = "Assets/Rocks/Models/" + fileName;
+        string filePathMaterial = "Assets/Rocks/Materials/" + fileName;
         string[] fileText = File.ReadAllLines(filePathJson);
         string fileTextOneLine = "";
         for (int i = 0; i < fileText.Length; i++)
@@ -33,13 +33,10 @@ public class Rock : MonoBehaviour
         this.Density = temp.Density;
         this.MeltingPoint = temp.MeltingPoint;
         // Debug.Log(RockName + ", " + RockType + ", " + WorldRegion + ", " + Composition + ", " + Density + ", " + MeltingPoint);
-        Material materialToChange = this.gameObject.transform.GetChild(0).GetComponent<Renderer>().material;
-        MeshFilter meshToChange = this.gameObject.GetComponent<MeshFilter>();
-        if (materialToChange.name != this.RockName) //|| meshToChange.name != this.RockName
-        {
-            materialToChange = (Material)Resources.Load(filePathMaterial);
-            meshToChange.sharedMesh = (Mesh)Resources.Load(filePathMesh);
-        }
+        Material materialToChange = this.gameObject.transform.Find("Render").GetComponentInChildren<MeshRenderer>().material;
+        MeshFilter meshToChange = this.gameObject.transform.Find("Render").GetComponentInChildren<MeshFilter>();
+        materialToChange = (Material)Resources.Load(filePathMaterial);
+        meshToChange.sharedMesh = (Mesh)Resources.Load(filePathMesh);
     }
     // Update is called once per frame
     void Update()
