@@ -16,9 +16,9 @@ public class Rock : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        string filePathJson = "Assets/Rocks/Data/" + fileName + ".json";
-        string filePathMesh = "Assets/Rocks/models" + fileName + ".obj";
-        string filePathMaterial = "Assets/Rocks/Materials" + fileName + ".mat";
+        string filePathJson = "Assets/Resources/Rocks/Data/" + fileName + ".json";
+        string filePathMesh = "Assets/Resources/Rocks/models" + fileName + ".obj";
+        string filePathMaterial = "Assets/Resources/Rocks/Materials" + fileName + ".mat";
         string[] fileText = File.ReadAllLines(filePathJson);
         string fileTextOneLine = "";
         for (int i = 0; i < fileText.Length; i++)

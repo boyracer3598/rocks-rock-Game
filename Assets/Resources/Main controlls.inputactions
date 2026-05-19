@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "Main controlls",
+    "maps": [
+        {
+            "name": "player",
+            "id": "b0a8b348-5a97-4f07-a276-963792134dd5",
+            "actions": [
+                {
+                    "name": "open menu",
+                    "type": "Button",
+                    "id": "2f4380bd-c4ea-47ac-8c1d-e3345014c641",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5f7ecd4e-91e9-403c-a272-c9ab569902db",
+                    "path": "<XRController>{LeftHand}/primaryTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "open menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
