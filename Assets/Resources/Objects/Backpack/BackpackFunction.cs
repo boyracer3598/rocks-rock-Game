@@ -7,11 +7,10 @@ using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using static UnityEditor.FilePathAttribute;
 using Kay.Data;
-
 public class BackpackFunction : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public ItsAlmostAStack<string> objects = new ItsAlmostAStack<string>();
+    public KayStack<string> objects = new KayStack<string>();
     void Start()
     {
         
