@@ -6,19 +6,29 @@ using System.Runtime.CompilerServices;
 
 public class Rock : MonoBehaviour
 {
-    public string RockName { get; private set; }
-    public string RockType { get; private set; }
-    public string WorldRegion { get; private set; }
-    public string Composition { get; private set; }
-    public double Density { get; private set; }
-    public int MeltingPoint { get; private set; }
-    [SerializeField] public string fileName = "test";
+    public string RockName;
+    public string RockType;
+    public string WorldRegion;
+    public string Composition;
+    public double Density;
+    public int MeltingPoint;
+    public string fileName = "test";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Refresh();
+    }
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+    public void Refresh()
+    {
+
         string filePathJson = "Assets/Resources/Rocks/Data/" + fileName + ".json";
-        string filePathMesh = "Assets/Resources/Rocks/models" + fileName + ".obj";
-        string filePathMaterial = "Assets/Resources/Rocks/Materials" + fileName + ".mat";
+        string filePathMesh = "Rocks/Models/" + fileName;
+        string filePathMaterial = "Rocks/Materials/" + fileName;
         string[] fileText = File.ReadAllLines(filePathJson);
         string fileTextOneLine = "";
         for (int i = 0; i < fileText.Length; i++)
@@ -32,18 +42,10 @@ public class Rock : MonoBehaviour
         this.Composition = temp.Composition;
         this.Density = temp.Density;
         this.MeltingPoint = temp.MeltingPoint;
-        // Debug.Log(RockName + ", " + RockType + ", " + WorldRegion + ", " + Composition + ", " + Density + ", " + MeltingPoint);
-        Material materialToChange = this.gameObject.transform.GetChild(0).GetComponent<Renderer>().material;
-        MeshFilter meshToChange = this.gameObject.GetComponent<MeshFilter>();
-        if (materialToChange.name != this.RockName) //|| meshToChange.name != this.RockName
-        {
-            materialToChange = (Material)Resources.Load(filePathMaterial);
-            meshToChange.sharedMesh = (Mesh)Resources.Load(filePathMesh);
-        }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
+        Debug.Log(RockName + ", " + RockType + ", " + WorldRegion + ", " + Composition + ", " + Density + ", " + MeltingPoint);
+        Material materialToChange = this.gameObject.transform.Find("Render").GetComponentInChildren<MeshRenderer>().material;
+        MeshFilter meshToChange = this.gameObject.transform.Find("Render").GetComponentInChildren<MeshFilter>();
+        materialToChange = (Material)Resources.Load(filePathMaterial);
+        meshToChange.sharedMesh = (Mesh)Resources.Load(filePathMesh);
     }
 }
