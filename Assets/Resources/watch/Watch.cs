@@ -26,11 +26,14 @@ public class Watch : MonoBehaviour
     void Update()
     {
         bagOfRocks = backpack.objects;
+        //rockListText.text = "";
         if (bagOfRocks.Size() > 0)
         {
             for( int i=0; i<bagOfRocks.Size(); i++)
             {
-                rockListText.text += bagOfRocks.Pop();
+               //Debug.Log("this a rock:"+ bagOfRocks.Pop());
+               rockListText.text +=  ".\n"+ "this is a rock" + bagOfRocks.Pop();
+
             }
         }
         
