@@ -18633,6 +18633,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89bf18677236938458918793d66edada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JsonRegistry
+  RockName: 
+  RockType: 
+  WorldRegion: 
+  Composition: 
+  Density: 0
+  MeltingPoint: 0
   fileName: Coal
 --- !u!1001 &6242179681828506539
 PrefabInstance:
@@ -18746,7 +18752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4803614339566677342, guid: 72138a47ec7b8714c91aa39dcdf3b714, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.669
+      value: 0.954
       objectReference: {fileID: 0}
     - target: {fileID: 4803614339566677342, guid: 72138a47ec7b8714c91aa39dcdf3b714, type: 3}
       propertyPath: m_LocalPosition.z
