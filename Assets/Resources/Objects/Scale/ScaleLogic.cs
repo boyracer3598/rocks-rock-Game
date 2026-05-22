@@ -20,6 +20,10 @@ public class ScaleLogic : MonoBehaviour
         }
         return result;
     }
+    void MachineStart(GameObject a, GameObject b)
+    {
+
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
