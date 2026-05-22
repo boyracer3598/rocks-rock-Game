@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
-using UnityEngine;
 
 namespace Kay.Data
 {
@@ -29,6 +28,15 @@ namespace Kay.Data
             else
                 return default(T);
         }
+        public T PopGrab()
+        {
+            if (items.Count > 0)
+            {
+                return items[items.Count - 1];
+            }
+            else
+                return default(T);
+        }
         public T Stab()
         {
             if (items.Count > 0)
@@ -36,6 +44,15 @@ namespace Kay.Data
                 T temp = items[0];
                 items.RemoveAt(0);
                 return temp;
+            }
+            else
+                return default(T);
+        }
+        public T StabGrab()
+        {
+            if (items.Count > 0)
+            {
+                return items[0];
             }
             else
                 return default(T);
@@ -51,9 +68,27 @@ namespace Kay.Data
             else
                 return default(T);
         }
+        public T Grab(int itemAtPosition)
+        {
+            if (items.Count > 0)
+            {
+                return items[itemAtPosition];
+            }
+            else
+                return default(T);
+        }
         public int Size()
         {
             return items.Count;
+        }
+        public List<T> GrabAll()
+        {
+            List<T> tempList = new List<T>();
+            for (int i = 0; i < Size(); i++)
+            {
+                tempList.Append(items[i]);
+            }
+            return tempList;
         }
     }
 }
