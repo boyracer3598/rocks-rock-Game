@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using Kay.Data;
+using System.Collections.Generic;
 public class Watch : MonoBehaviour
 {
     public GameObject labTeleportPoint;
@@ -13,7 +14,7 @@ public class Watch : MonoBehaviour
     public GameObject rockList;
     public TextMeshProUGUI rockListText;
     public BackpackFunction backpack;
-    public KayStack<string> bagOfRocks;
+    public List<string> bagOfRocks;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,17 +26,17 @@ public class Watch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bagOfRocks = backpack.objects;
-        //rockListText.text = "";
-        if (bagOfRocks.Size() > 0)
+        //Debug.Log( backpack.objects.Size());
+        bagOfRocks = backpack.objects.GrabAll();
+        rockListText.text = "";
+        
+        for( int i=0; i<backpack.objects.Size(); i++)
         {
-            for( int i=0; i<bagOfRocks.Size(); i++)
-            {
-               //Debug.Log("this a rock:"+ bagOfRocks.Pop());
-               rockListText.text +=  ".\n"+ "this is a rock" + bagOfRocks.Pop();
+            //Debug.Log(backpack.objects.GrabAll()); ;
+            rockListText.text += ".\n" + "-: " + backpack.objects.Grab(i);
 
-            }
         }
+        
         
         
 

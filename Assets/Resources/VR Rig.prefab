@@ -13927,6 +13927,7 @@ MonoBehaviour:
   rockList: {fileID: 6987110532448397906}
   rockListText: {fileID: 0}
   backpack: {fileID: 0}
+  bagOfRocks: []
 --- !u!1 &5528814190805802104
 GameObject:
   m_ObjectHideFlags: 0
