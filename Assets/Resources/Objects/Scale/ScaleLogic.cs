@@ -22,7 +22,10 @@ public class ScaleLogic : MonoBehaviour
     }
     void MachineStart(GameObject a, GameObject b)
     {
-
+        if (a.gameObject.GetComponentInChildren<Rock>().RockName != "" && b.gameObject.GetComponentInChildren<Rock>().RockName != "")
+        {
+            
+        }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
