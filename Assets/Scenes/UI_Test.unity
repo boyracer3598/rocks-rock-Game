@@ -4751,6 +4751,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493944547}
   m_CullTransparentMesh: 1
+--- !u!1 &499249812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6987110532448397906, guid: 30546bf41d25268448f5dee51e303fe9, type: 3}
+  m_PrefabInstance: {fileID: 6990206350130767609}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &528032898
 GameObject:
   m_ObjectHideFlags: 0
@@ -5439,17 +5444,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &622079250 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7354019868776294714, guid: fc0cfb7661ecc864da41ed5edef2e7ea, type: 3}
-  m_PrefabInstance: {fileID: 4005146432388565210}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2f163e8f4c2fc9449fd6a971fea4884, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BackpackFunction
 --- !u!1 &624858285
 GameObject:
   m_ObjectHideFlags: 0
@@ -11037,6 +11031,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225964133}
   m_CullTransparentMesh: 1
+--- !u!1 &1237798945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7580988138617169929, guid: fc0cfb7661ecc864da41ed5edef2e7ea, type: 3}
+  m_PrefabInstance: {fileID: 4005146432388565210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1237798953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237798945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6369bd11bb6ec1c4f8ae8fc737741600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackpackFunction
+  grabAction: {fileID: 3019896852321230970, guid: f52bbc6e60d1daf4f9dfed4ad73f2bac, type: 3}
 --- !u!4 &1245691064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4087172880121169550, guid: 30546bf41d25268448f5dee51e303fe9, type: 3}
@@ -19102,10 +19114,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Backpack
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7354019868776294714, guid: fc0cfb7661ecc864da41ed5edef2e7ea, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7580988138617169929, guid: fc0cfb7661ecc864da41ed5edef2e7ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1237798953}
   m_SourcePrefab: {fileID: 100100000, guid: fc0cfb7661ecc864da41ed5edef2e7ea, type: 3}
 --- !u!1001 &4029767096739082718
 PrefabInstance:
@@ -19505,7 +19521,11 @@ PrefabInstance:
     - target: {fileID: 2751972224133933270, guid: 30546bf41d25268448f5dee51e303fe9, type: 3}
       propertyPath: backpack
       value: 
-      objectReference: {fileID: 622079250}
+      objectReference: {fileID: 1237798953}
+    - target: {fileID: 2751972224133933270, guid: 30546bf41d25268448f5dee51e303fe9, type: 3}
+      propertyPath: rockList
+      value: 
+      objectReference: {fileID: 499249812}
     - target: {fileID: 2751972224133933270, guid: 30546bf41d25268448f5dee51e303fe9, type: 3}
       propertyPath: labTeleportPoint
       value: 
