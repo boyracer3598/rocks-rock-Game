@@ -43,8 +43,8 @@ public class Rock : MonoBehaviour
         this.Density = temp.Density;
         this.MeltingPoint = temp.MeltingPoint;
         Debug.Log(RockName + ", " + RockType + ", " + WorldRegion + ", " + Composition + ", " + Density + ", " + MeltingPoint);
-        Material materialToChange = this.gameObject.transform.Find("Render").GetComponentInChildren<MeshRenderer>().material;
-        MeshFilter meshToChange = this.gameObject.transform.Find("Render").GetComponentInChildren<MeshFilter>();
+        Material materialToChange = this.gameObject.transform.Find("Render").GetComponent<MeshRenderer>().material;
+        MeshFilter meshToChange = this.gameObject.transform.Find("Render").GetComponent<MeshFilter>();
         materialToChange = (Material)Resources.Load(filePathMaterial);
         meshToChange.sharedMesh = (Mesh)Resources.Load(filePathMesh);
     }
