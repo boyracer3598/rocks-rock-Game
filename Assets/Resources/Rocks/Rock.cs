@@ -27,7 +27,7 @@ public class Rock : MonoBehaviour
     {
 
         string filePathJson = "Assets/Resources/Rocks/Data/" + fileName + ".json";
-        string filePathMesh = "Rocks/Models/" + fileName;
+        string filePathMesh = "Rocks/models/FBX/" + fileName;
         string filePathMaterial = "Rocks/Materials/" + fileName;
         string[] fileText = File.ReadAllLines(filePathJson);
         string fileTextOneLine = "";
@@ -43,9 +43,9 @@ public class Rock : MonoBehaviour
         this.Density = temp.Density;
         this.MeltingPoint = temp.MeltingPoint;
         Debug.Log(RockName + ", " + RockType + ", " + WorldRegion + ", " + Composition + ", " + Density + ", " + MeltingPoint);
-        Material materialToChange = this.gameObject.transform.Find("Render").GetComponent<MeshRenderer>().material;
-        MeshFilter meshToChange = this.gameObject.transform.Find("Render").GetComponent<MeshFilter>();
-        materialToChange = (Material)Resources.Load(filePathMaterial);
-        meshToChange.sharedMesh = (Mesh)Resources.Load(filePathMesh);
+        Material newMaterial = (Material)Resources.Load(filePathMaterial);
+        GetComponent<Renderer>().material = newMaterial;
+        GameObject model = Resources.Load<GameObject>(filePathMesh);
+        GetComponent<MeshFilter>().sharedMesh = model.GetComponent<MeshFilter>().sharedMesh;
     }
 }
