@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - Hand
+  - Rock
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - player
   - Water
   - UI
   - 
