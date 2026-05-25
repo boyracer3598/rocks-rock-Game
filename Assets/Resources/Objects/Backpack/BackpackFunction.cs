@@ -71,14 +71,14 @@ public class BackpackFunction : MonoBehaviour
         {
             GameObject newRock = (GameObject)Instantiate(Resources.Load("rock pickup"));
             newRock.GetComponent<Rock>().fileName = (string)objects.Pop();
-            newRock.GetComponent<Rock>().Refresh();
+            // newRock.GetComponent<Rock>().Refresh();
         }
     }
     public void RemoveRock(int location)
     {
         GameObject newRock = (GameObject)Instantiate(Resources.Load("rock pickup"));
         newRock.GetComponent<Rock>().fileName = (string)objects.Remove(location);
-        newRock.GetComponent<Rock>().Refresh();
+        // newRock.GetComponent<Rock>().Refresh();
     }
     public void EmptyBag()
     {
@@ -86,7 +86,7 @@ public class BackpackFunction : MonoBehaviour
         {
             GameObject newRock = (GameObject)Instantiate(Resources.Load("rock pickup"));
             newRock.GetComponent<Rock>().fileName = (string)objects.Stab();
-            newRock.GetComponent<Rock>().Refresh();
+            // newRock.GetComponent<Rock>().Refresh();
         }
     }
 }
