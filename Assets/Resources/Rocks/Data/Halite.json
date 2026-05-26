@@ -1,0 +1,8 @@
+{
+	"RockName": "Halite",
+	"RockType": "Mineral",
+	"RockVariety": "Rock Salt",
+	"Composition": "NaCl",
+	"Density": 2170.00,
+	"MeltingPoint": 800
+}
