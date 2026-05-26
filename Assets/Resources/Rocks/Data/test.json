@@ -1,7 +1,7 @@
 {
 	"RockName": "testRock",
 	"RockType": "sedimentary",
-	"WorldRegion": "asia",
+	"RockVariety": "asia",
 	"Composition": "NaCl",
 	"Density": 12.32,
 	"MeltingPoint": 500
