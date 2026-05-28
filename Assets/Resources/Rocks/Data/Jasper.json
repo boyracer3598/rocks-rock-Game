@@ -1,8 +1,8 @@
 {
 	"RockName": "Jasper",
 	"RockType": "Aggregate",
-	"RockVariety": "so many...",
+	"RockVariety": "Null",
 	"Composition": "SiO2",
-	"Density": 2170.00,
+	"Density": 2530.00,
 	"MeltingPoint": 800
 }

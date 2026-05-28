@@ -13,7 +13,7 @@ public class BackpackFunction : MonoBehaviour
 {
     public InputActionReference grabAction;
     private bool isInBag = false;
-    public KayStack<string> objects = new KayStack<string>();
+    public KayStack<string> objects = new();
     void Start()
     {
         //set up inputs

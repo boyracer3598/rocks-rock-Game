@@ -1,8 +1,0 @@
-{
-	"RockName": "testRock",
-	"RockType": "sedimentary",
-	"RockVariety": "asia",
-	"Composition": "NaCl",
-	"Density": 12.32,
-	"MeltingPoint": 500
-}
