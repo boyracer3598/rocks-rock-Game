@@ -10209,7 +10209,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 7.1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1328698168
@@ -16017,7 +16017,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3435172818219184998, guid: 1c880f5331bd8a94f835e545dcbc87cf, type: 3}
       propertyPath: fileName
-      value: Manganese
+      value: Quartz
       objectReference: {fileID: 0}
     - target: {fileID: 3790161030595885310, guid: 1c880f5331bd8a94f835e545dcbc87cf, type: 3}
       propertyPath: m_LocalPosition.x

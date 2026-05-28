@@ -1,0 +1,8 @@
+{
+	"RockName": "Azurite",
+	"RockType": "Mineral",
+	"RockVariety": "greeng",
+	"Composition": "Cu3(CO3)2(OH)2",
+	"Density": 3830.00,
+	"MeltingPoint": 500
+}

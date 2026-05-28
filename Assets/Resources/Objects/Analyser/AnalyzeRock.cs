@@ -11,7 +11,7 @@ public class AnalyzeRock : MonoBehaviour
         {
             temp.Append((string)thisRock.RockName);
             temp.Append((string)thisRock.RockType);
-            temp.Append((string)thisRock.WorldRegion);
+            temp.Append((string)thisRock.RockVariety);
             temp.Append((string)thisRock.Composition);
             temp.Append((string)thisRock.Density.ToString());
             temp.Append((string)thisRock.MeltingPoint.ToString());

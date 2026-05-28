@@ -7,17 +7,17 @@ namespace Kay.Data
     public class KayStack<T>
     {
 
-        private List<T> items = new List<T>();
+        private List<T> items = new();
 
-        public void Append(T item)
+        public void Append(T item) /*Adds an item to the end of the kaystack*/
         {
             items.Add(item);
         }
-        public void Prepend(T item)
+        public void Prepend(T item) /*Adds an item to the start of the kaystack*/
         {
             items.Prepend(item);
         }
-        public T Pop()
+        public T Pop() /*Removes and returns the last item of the kaystack*/
         {
             if (items.Count > 0)
             {
@@ -28,7 +28,7 @@ namespace Kay.Data
             else
                 return default(T);
         }
-        public T PopGrab()
+        public T PopGrab() /*Returns the last item of the kaystack*/
         {
             if (items.Count > 0)
             {
@@ -37,7 +37,7 @@ namespace Kay.Data
             else
                 return default(T);
         }
-        public T Stab()
+        public T Stab() /*Removes and returns the first item of the kaystack*/
         {
             if (items.Count > 0)
             {
@@ -48,7 +48,7 @@ namespace Kay.Data
             else
                 return default(T);
         }
-        public T StabGrab()
+        public T StabGrab() /*Returns the first item of the kaystack*/
         {
             if (items.Count > 0)
             {
@@ -57,7 +57,7 @@ namespace Kay.Data
             else
                 return default(T);
         }
-        public T Remove(int itemAtPosition)
+        public T Remove(int itemAtPosition) /*Removes and returns the item at a specific position*/
         {
             if (items.Count > 0)
             {
@@ -68,7 +68,7 @@ namespace Kay.Data
             else
                 return default(T);
         }
-        public T Grab(int itemAtPosition)
+        public T Grab(int itemAtPosition) /*Returns the item at a specific position*/
         {
             if (items.Count > 0)
             {
@@ -77,13 +77,13 @@ namespace Kay.Data
             else
                 return default(T);
         }
-        public int Size()
+        public int Size() /*What do you think this does*/
         {
             return items.Count;
         }
-        public List<T> GrabAll()
+        public List<T> GrabAll() /*Creates and returns a list containing each item in the kaystack*/
         {
-            List<T> tempList = new List<T>();
+            List<T> tempList = new();
             for (int i = 0; i < Size(); i++)
             {
                 tempList.Append(items[i]);
