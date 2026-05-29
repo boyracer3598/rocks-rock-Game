@@ -7,6 +7,8 @@ TagManager:
   - Anchor
   - Hand
   - Rock
+  - Bowl1
+  - Bowl2
   layers:
   - Default
   - TransparentFX
