@@ -4,6 +4,8 @@ public class ScaleLogic : MonoBehaviour
 {
     public bool leftHeavy = true;
     public GameObject left, right;
+    public Vector3 bowl1location, bowl2location;
+    double ghetsis;
     double calculateDifference(double a, double b) //a = left b = right
     {
         double result;
@@ -26,28 +28,41 @@ public class ScaleLogic : MonoBehaviour
         if (left.GetComponent<Rock>().RockName != "" && right.GetComponent<Rock>().RockName != "")
         {
             int heavyToInt =0;
-            double ghetsis = calculateDifference(left.GetComponent<Rock>().Density, right.GetComponent<Rock>().Density);
+            ghetsis = calculateDifference(left.GetComponent<Rock>().Density, right.GetComponent<Rock>().Density);
             Debug.Log(ghetsis);
+            GameObject heavyRock;
             if (leftHeavy == true)
             {
                 heavyToInt = 1;
+                heavyRock = left;
             }
             else
             {
                 heavyToInt = -1;
+                heavyRock = right;
             }
-            GameObject.FindWithTag("Bowl1").transform.transform.position = new Vector3 (0, (float)(0 + (1000 / (ghetsis * heavyToInt))), 0);
+            float bowl1LocationY = (bowl1location.y + 1/((float)ghetsis / (float)heavyRock.GetComponent<Rock>().Density * 100) * heavyToInt);
+            GameObject.FindWithTag("Bowl1").transform.position = new Vector3 (bowl1location.x, bowl1LocationY, bowl1location.z);
+            float bowl2LocationY = (bowl2location.y + 1/((float)ghetsis / (float)heavyRock.GetComponent<Rock>().Density * 100) * heavyToInt * -1);
+            GameObject.FindWithTag("Bowl2").transform.position = new Vector3(bowl2location.x, bowl2LocationY, bowl2location.z);
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        bowl1location = GameObject.FindWithTag("Bowl1").transform.position;
+        bowl2location = GameObject.FindWithTag("Bowl2").transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        MachineStart();
+        if(transform.Find("bowl1Collider").GetComponent<RockCentering>().otherObject != null && transform.Find("bowl2Collider").GetComponent<RockCentering>().otherObject != null)
+        {
+            left = transform.Find("bowl1Collider").GetComponent<RockCentering>().otherObject;
+            right = transform.Find("bowl2Collider").GetComponent<RockCentering>().otherObject;
+            MachineStart();
+        }
     }
 }
