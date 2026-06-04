@@ -29,7 +29,6 @@ public class ScaleLogic : MonoBehaviour
         {
             int heavyToInt =0;
             ghetsis = calculateDifference(left.GetComponent<Rock>().Density, right.GetComponent<Rock>().Density);
-            Debug.Log(ghetsis);
             GameObject heavyRock;
             if (leftHeavy == true)
             {

@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df5afc8fd6e0564790af4dd7916b790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RockCentering
-  center: {x: -0.00822, y: -0.0064, z: 0.00914}
+  center: {x: 0, y: 0, z: 0}
   otherObject: {fileID: 0}
 --- !u!65 &384470187
 BoxCollider:
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df5afc8fd6e0564790af4dd7916b790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RockCentering
-  center: {x: 0, y: 0, z: 0}
+  center: {x: 0, y: 0, z: -0.9658923}
   otherObject: {fileID: 0}
 --- !u!1001 &934576816
 PrefabInstance:
@@ -1756,7 +1756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3790161030595885310, guid: 1c880f5331bd8a94f835e545dcbc87cf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.04
+      value: -0.964
       objectReference: {fileID: 0}
     - target: {fileID: 3790161030595885310, guid: 1c880f5331bd8a94f835e545dcbc87cf, type: 3}
       propertyPath: m_LocalRotation.w

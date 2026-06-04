@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class RockCentering : MonoBehaviour
 {
-    Vector3 center;
+    public Vector3 center;
     public GameObject otherObject = null;
     private bool handIn = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public void Start()
     {
-        center = GetComponent<BoxCollider>().center;
+        center = transform.position;
     }
     private void OnTriggerEnter(Collider other)
     {
