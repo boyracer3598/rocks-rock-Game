@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-8420429340955772491
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Metal Bits Drop 2_{-8420429340955772491}
+  m_AudioClip: {fileID: 8300000, guid: d1f1b5a9317106e40afd8c8011ebe385, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-2318036577700059595
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Gym Dumbell Drop 3_{-2318036577700059595}
+  m_AudioClip: {fileID: 8300000, guid: 3cc44a9a574d8d0419f1e736985f5bfb, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-172458897343812079
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Large Styrofoam Block Drop 4_{-172458897343812079}
+  m_AudioClip: {fileID: 8300000, guid: 4510209cf3304e242ac419808487e1d0, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1698507898912471296
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Wooden Crate Drop 1_{1698507898912471296}
+  m_AudioClip: {fileID: 8300000, guid: 3411811be60be69469d1bcf23ee32738, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Drops
+  m_Volume: 0
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: -8.448844, y: 5.8085823}
+  m_PitchRandomizationRange: {x: -158.41585, y: 134.65347}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: -2318036577700059595}
+  - {fileID: -172458897343812079}
+  - {fileID: -8420429340955772491}
+  - {fileID: 1698507898912471296}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 1
+  m_TriggerMode: 1
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 2
+  m_VolumeRandomizationEnabled: 1
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
