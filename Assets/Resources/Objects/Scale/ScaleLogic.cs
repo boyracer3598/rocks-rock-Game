@@ -57,10 +57,10 @@ public class ScaleLogic : MonoBehaviour
     void Update()
     {
 
-        if(transform.Find("bowl1Collider").GetComponent<RockCentering>().otherObject != null && transform.Find("bowl2Collider").GetComponent<RockCentering>().otherObject != null)
+        if(transform.Find("bowl1Centerer").GetComponent<RockCentering>().otherObject != null && transform.Find("bowl2Centerer").GetComponent<RockCentering>().otherObject != null)
         {
-            left = transform.Find("bowl1Collider").GetComponent<RockCentering>().otherObject;
-            right = transform.Find("bowl2Collider").GetComponent<RockCentering>().otherObject;
+            left = transform.Find("bowl1Centerer").GetComponent<RockCentering>().otherObject;
+            right = transform.Find("bowl2Centerer").GetComponent<RockCentering>().otherObject;
             MachineStart();
         }
     }

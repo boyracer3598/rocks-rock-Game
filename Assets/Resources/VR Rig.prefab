@@ -23508,6 +23508,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   mainMenu: {fileID: 6294019253942015102}
   toggleMenuAction: {fileID: -6836545829279001599, guid: f52bbc6e60d1daf4f9dfed4ad73f2bac, type: 3}
+  LightLevelSlider: {fileID: 0}
+  voluneSlider: {fileID: 0}
+  PostProcessing: {fileID: 0}
+  lightLevel: 0.5
+  volumeLevel: 0.5
 --- !u!1 &6294019253942015102 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4580597495296064739, guid: b08d070416231e144a45cfc05ae20c51, type: 3}

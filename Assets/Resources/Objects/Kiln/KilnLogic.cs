@@ -4,7 +4,9 @@ public class KilnLogic : MonoBehaviour
 {
     public Object LavaBeaker;
     public Object Smoke;
-    void RunKiln(GameObject rockObject, int temperature)
+    public int temperature;
+    public bool running = false;
+    void RunKiln(GameObject rockObject)
     {
         int rockMeltingPoint = rockObject.GetComponentInChildren<Rock>().MeltingPoint;
         if (rockMeltingPoint == -1)
@@ -16,6 +18,9 @@ public class KilnLogic : MonoBehaviour
         {
             Destroy(rockObject);
             Instantiate(LavaBeaker);
+        } else
+        {
+            Debug.Log("Not Hot Enough!!");
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,6 +32,14 @@ public class KilnLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!running && GetComponentInChildren<RockCentering>().otherObject != null)
+        {
+            Invoke("RunKiln(GetComponentInChildren<RockCentering>().otherObject)", 5);
+            running = true;
+        } else if (running && GetComponentInChildren<RockCentering>().otherObject == null)
+        {
+            CancelInvoke("RunKiln(GetComponentInChildren<RockCentering>().otherObject)");
+            running = false;
+        }
     }
 }

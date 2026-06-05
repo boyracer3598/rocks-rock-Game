@@ -12,7 +12,7 @@ public class RockCentering : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Rock")) {
+        if (other.gameObject.CompareTag("Rock") && !handIn) {
             other.gameObject.transform.position = center;
             otherObject = other.gameObject;
         }    
