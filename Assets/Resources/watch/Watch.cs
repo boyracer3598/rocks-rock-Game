@@ -34,7 +34,6 @@ public class Watch : MonoBehaviour
         {
             //Debug.Log(backpack.objects.GrabAll()); ;
             rockListText.text += ".\n" + "-: " + backpack.objects.Grab(i);
-
         }
         
         

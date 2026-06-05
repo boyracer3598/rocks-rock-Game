@@ -59,10 +59,11 @@ public class Rock : MonoBehaviour
         this.Composition = temp.Composition;
         this.Density = temp.Density;
         this.MeltingPoint = temp.MeltingPoint;
-        Debug.Log(RockName + ", " + RockType + ", " + RockVariety + ", " + Composition + ", " + Density + ", " + MeltingPoint);
+        // Debug.Log(RockName + ", " + RockType + ", " + RockVariety + ", " + Composition + ", " + Density + ", " + MeltingPoint);
         Material newMaterial = (Material)Resources.Load(filePathMaterial);
         GetComponent<Renderer>().material = newMaterial;
         GameObject model = Resources.Load<GameObject>(filePathMesh);
         GetComponent<MeshFilter>().sharedMesh = model.GetComponent<MeshFilter>().sharedMesh;
+        this.gameObject.name = temp.RockName;
     }
 }
