@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Duck Puns
   productName: Rocks rock
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -143,9 +143,9 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 9.2.1
+  bundleVersion: 0.0.1
   preloadedAssets:
-  - {fileID: 0}
+  - {fileID: -944628639613478452, guid: f52bbc6e60d1daf4f9dfed4ad73f2bac, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -933,8 +933,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Rocks rock
-  metroPackageVersion: 
+  metroPackageName: Rocksrock
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -942,7 +942,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Rocks rock
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Rocks rock
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

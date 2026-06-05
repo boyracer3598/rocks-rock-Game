@@ -5,7 +5,6 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
-using static UnityEditor.FilePathAttribute;
 using Kay.Data;
 using UnityEngine.InputSystem;
 using System;

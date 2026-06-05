@@ -15,6 +15,7 @@ public class SubRock
 }
 public class Rock : MonoBehaviour
 {
+    [SerializeField] AudioSource DropSound;
     public string RockName;
     public string RockType;
     public string RockVariety;
@@ -25,6 +26,7 @@ public class Rock : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        DropSound = GetComponent<AudioSource>();
         Refresh();
     }
     // Update is called once per frame
@@ -32,6 +34,12 @@ public class Rock : MonoBehaviour
     {
 
     }
+
+    void OnCollisionEnter() {
+        DropSound.Play();
+    }
+
+
     public void Refresh()
     {
 
