@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
+using System;
 
 namespace Kay.Data
 {
@@ -89,6 +90,22 @@ namespace Kay.Data
                 tempList.Append(items[i]);
             }
             return tempList;
+        }
+        public T GrabRandom(int min = 0, int max = 0)
+        {
+            Random rnd = new();
+            int outputNo;
+            if (max == 0)
+            {
+                max = Size();
+            }
+            if (max != 0)
+            {
+                outputNo = (int)Math.Floor((decimal)rnd.Next(min, max));
+            }
+            else
+                outputNo = 0;
+            return items[outputNo];
         }
     }
 }
