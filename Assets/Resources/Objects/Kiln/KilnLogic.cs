@@ -6,8 +6,9 @@ public class KilnLogic : MonoBehaviour
     public Object Smoke;
     public int temperature;
     public bool running = false;
-    void RunKiln(GameObject rockObject)
+    void RunKiln()
     {
+        GameObject rockObject = GetComponentInChildren<RockCentering>().otherObject;
         int rockMeltingPoint = rockObject.GetComponentInChildren<Rock>().MeltingPoint;
         if (rockMeltingPoint == -1)
         {
@@ -34,11 +35,11 @@ public class KilnLogic : MonoBehaviour
     {
         if (!running && GetComponentInChildren<RockCentering>().otherObject != null)
         {
-            Invoke("RunKiln(GetComponentInChildren<RockCentering>().otherObject)", 5);
+            Invoke(nameof(RunKiln), 5);
             running = true;
         } else if (running && GetComponentInChildren<RockCentering>().otherObject == null)
         {
-            CancelInvoke("RunKiln(GetComponentInChildren<RockCentering>().otherObject)");
+            CancelInvoke(nameof(RunKiln));
             running = false;
         }
     }
