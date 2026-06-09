@@ -5,7 +5,7 @@ public class ScaleLogic : MonoBehaviour
     public bool leftHeavy = true;
     public GameObject left, right;
     public Vector3 bowl1location, bowl2location;
-    double ghetsis;
+    double difference;
     double calculateDifference(double a, double b) //a = left b = right
     {
         double result;
@@ -28,7 +28,7 @@ public class ScaleLogic : MonoBehaviour
         if (left.GetComponent<Rock>().RockName != "" && right.GetComponent<Rock>().RockName != "")
         {
             int heavyToInt =0;
-            ghetsis = calculateDifference(left.GetComponent<Rock>().Density, right.GetComponent<Rock>().Density);
+            difference = calculateDifference(left.GetComponent<Rock>().Density, right.GetComponent<Rock>().Density);
             GameObject heavyRock;
             if (leftHeavy == true)
             {
@@ -40,9 +40,14 @@ public class ScaleLogic : MonoBehaviour
                 heavyToInt = -1;
                 heavyRock = right;
             }
-            float bowl1LocationY = (bowl1location.y + 1/((float)ghetsis / (float)heavyRock.GetComponent<Rock>().Density * 100) * heavyToInt);
+            float bowl1LocationY = (bowl1location.y + 1/((float)difference / (float)heavyRock.GetComponent<Rock>().Density * 100) * heavyToInt);
             GameObject.FindWithTag("Bowl1").transform.position = new Vector3 (bowl1location.x, bowl1LocationY, bowl1location.z);
-            float bowl2LocationY = (bowl2location.y + 1/((float)ghetsis / (float)heavyRock.GetComponent<Rock>().Density * 100) * heavyToInt * -1);
+            float bowl2LocationY = (bowl2location.y + 1/((float)difference / (float)heavyRock.GetComponent<Rock>().Density * 100) * heavyToInt * -1);
+            if (bowl2LocationY == float.NegativeInfinity || bowl2LocationY == float.PositiveInfinity)
+            {
+                bowl1LocationY = 0;
+                bowl2LocationY = 0;
+            }
             GameObject.FindWithTag("Bowl2").transform.position = new Vector3(bowl2location.x, bowl2LocationY, bowl2location.z);
         }
     }
