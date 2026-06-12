@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7369392629851663112}
   - component: {fileID: 6345995539010138700}
-  - component: {fileID: 3773009212299902603}
+  - component: {fileID: 9079051130909857901}
   m_Layer: 0
   m_Name: door lock
   m_TagString: Untagged
@@ -54,7 +54,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.13897102, y: 0.46198004, z: 0.1168623}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3773009212299902603
+--- !u!114 &9079051130909857901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,6 +63,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2009582143136565487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3357a1fe14a6a374c96d8c840a3a82a2, type: 3}
+  m_Script: {fileID: 11500000, guid: c0cf1945777de5b4aa8642197377d756, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LockingJoint
+  m_EditorClassIdentifier: Assembly-CSharp::LockJoint
