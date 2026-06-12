@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
+using System;
+using System.IO;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Kay.Data
 {
@@ -26,7 +29,7 @@ namespace Kay.Data
                 return temp;
             }
             else
-                return default(T);
+                return default;
         }
         public T PopGrab() /*Returns the last item of the kaystack*/
         {
@@ -35,7 +38,7 @@ namespace Kay.Data
                 return items[items.Count - 1];
             }
             else
-                return default(T);
+                return default;
         }
         public T Stab() /*Removes and returns the first item of the kaystack*/
         {
@@ -46,7 +49,7 @@ namespace Kay.Data
                 return temp;
             }
             else
-                return default(T);
+                return default;
         }
         public T StabGrab() /*Returns the first item of the kaystack*/
         {
@@ -55,7 +58,7 @@ namespace Kay.Data
                 return items[0];
             }
             else
-                return default(T);
+                return default;
         }
         public T Remove(int itemAtPosition) /*Removes and returns the item at a specific position*/
         {
@@ -66,7 +69,7 @@ namespace Kay.Data
                 return temp;
             }
             else
-                return default(T);
+                return default;
         }
         public T Grab(int itemAtPosition) /*Returns the item at a specific position*/
         {
@@ -75,7 +78,7 @@ namespace Kay.Data
                 return items[itemAtPosition];
             }
             else
-                return default(T);
+                return default;
         }
         public int Size() /*What do you think this does*/
         {
@@ -89,6 +92,22 @@ namespace Kay.Data
                 tempList.Append(items[i]);
             }
             return tempList;
+        }
+        public T GrabRandom(int min = 0, int max = 0)
+        {
+            Random rnd = new();
+            int outputNo;
+            if (max == 0)
+            {
+                max = Size();
+            }
+            if (max != 0)
+            {
+                outputNo = (int)Math.Floor((decimal)rnd.Next(min, max));
+            }
+            else
+                outputNo = 0;
+            return items[outputNo];
         }
     }
 }
