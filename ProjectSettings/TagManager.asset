@@ -9,6 +9,8 @@ TagManager:
   - Rock
   - Bowl1
   - Bowl2
+  - Door
+  - Draw
   layers:
   - Default
   - TransparentFX
