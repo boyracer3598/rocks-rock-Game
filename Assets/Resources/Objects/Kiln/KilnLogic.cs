@@ -39,7 +39,7 @@ public class KilnLogic : MonoBehaviour
     {
         if(temperature > 0 && GetComponentInChildren<RockCentering>().otherObject != null)
         {
-            RunKiln(GetComponentInChildren<RockCentering>().otherObject);
+            RunKiln();
             temperature = 0;
         }
 

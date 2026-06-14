@@ -18,6 +18,7 @@ public class AnalyzeRock : MonoBehaviour
             temp.Append("Details: " + (string)thisRock.RockVariety);
             temp.Append("Chemical Composition: " + (string)thisRock.Composition);
             temp.Append("Rock Density: " + (string)thisRock.Density.ToString());
+            //check if the rock melts or combusts at high temperatures
             if (thisRock.MeltingPoint >= 0)
             {
                 temp.Append("Melting Point: " + (string)thisRock.MeltingPoint.ToString());
