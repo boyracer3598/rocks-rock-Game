@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class ScaleLogic : MonoBehaviour
@@ -6,6 +7,7 @@ public class ScaleLogic : MonoBehaviour
     public GameObject left, right;
     public Vector3 bowl1location, bowl2location;
     double difference;
+    public TextMeshProUGUI ScaleDisplay;
     double calculateDifference(double a, double b) //a = left b = right
     {
         double result;
@@ -68,5 +70,7 @@ public class ScaleLogic : MonoBehaviour
             right = transform.Find("bowl2Centerer").GetComponent<RockCentering>().otherObject;
             MachineStart();
         }
+
+        ScaleDisplay.text = "Difference: " + difference.ToString("0.00") + " g/cm^3";
     }
 }
