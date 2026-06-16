@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
@@ -9,10 +11,17 @@ public class MainMenu : MonoBehaviour
     [SerializeField] AudioMixer audioMixer;
     
     public GameObject mainMenu;
+    public GameObject MainMenuUI;
+    public GameObject CurrentQuestMenu;
+    public GameObject CompletedQuestsMenu;
+    public QuestDialogue QuestManger;
+    public TextMeshProUGUI CurrentQuestText;
+    public TextMeshProUGUI CompletedQuestsText;
     public InputActionReference toggleMenuAction;
     public Slider LightLevelSlider;
     public Slider voluneSlider;
     public Volume PostProcessing;
+    
     public float lightLevel = 0.5f;
     public float volumeLevel = 0.5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -52,9 +61,46 @@ public class MainMenu : MonoBehaviour
     public void ToggleMenu()
     {
         mainMenu.SetActive(!mainMenu.activeSelf);
+        MainMenuUI.SetActive(true);
+        CurrentQuestMenu.SetActive(false);
+        CompletedQuestsMenu.SetActive(false);
     }
 
-  
+    public void Back()
+    {
+        MainMenuUI.SetActive(true);
+        CurrentQuestMenu.SetActive(false);
+        CompletedQuestsMenu.SetActive(false);
+    }
+
+    public void ToggleCompletedQuests()
+    {
+        MainMenuUI.SetActive(false);
+        CurrentQuestMenu.SetActive(false);
+        CompletedQuestsMenu.SetActive(true);
+    }
+
+    public void ToggleCurrentQuest()
+    {
+        MainMenuUI.SetActive(false);
+        CurrentQuestMenu.SetActive(true);
+        CompletedQuestsMenu.SetActive(false);
+    }
+
+    public void listCompletledQuests()
+    {
+        for (int i = 0; i < QuestManger.CompletedQuests.Size(); i++)
+        {
+            Debug.Log("in quest completed loop");
+            CompletedQuestsText.text += QuestManger.CompletedQuests.Grab(i) + "\n";
+        }
+
+
+            
+    }
+
+
+
 
     private void OnDestroy()
     {
@@ -62,6 +108,9 @@ public class MainMenu : MonoBehaviour
     }
     // Update is called once per frame
     void Update()
-    { }
+    {
+        CurrentQuestText.text = QuestManger.CurrentQuestText;
+        listCompletledQuests();
+    }
         
 }
