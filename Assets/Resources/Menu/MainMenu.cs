@@ -14,9 +14,9 @@ public class MainMenu : MonoBehaviour
     public GameObject MainMenuUI;
     public GameObject CurrentQuestMenu;
     public GameObject CompletedQuestsMenu;
-    public GameObject QuestText;
     public QuestDialogue QuestManger;
     public TextMeshProUGUI CurrentQuestText;
+    public TextMeshProUGUI CompletedQuestsText;
     public InputActionReference toggleMenuAction;
     public Slider LightLevelSlider;
     public Slider voluneSlider;
@@ -68,7 +68,7 @@ public class MainMenu : MonoBehaviour
 
     public void Back()
     {
-        MainMenuUI.SetActive(false);
+        MainMenuUI.SetActive(true);
         CurrentQuestMenu.SetActive(false);
         CompletedQuestsMenu.SetActive(false);
     }
@@ -91,8 +91,8 @@ public class MainMenu : MonoBehaviour
     {
         for (int i = 0; i < QuestManger.CompletedQuests.Size(); i++)
         {
-            GameObject QuestTextChild = Instantiate(QuestText, CompletedQuestsMenu);
-            QuestManger.CompletedQuests.Grab(i);
+            Debug.Log("in quest completed loop");
+            CompletedQuestsText.text += QuestManger.CompletedQuests.Grab(i) + "\n";
         }
 
 
@@ -110,7 +110,7 @@ public class MainMenu : MonoBehaviour
     void Update()
     {
         CurrentQuestText.text = QuestManger.CurrentQuestText;
-    
+        listCompletledQuests();
     }
         
 }
