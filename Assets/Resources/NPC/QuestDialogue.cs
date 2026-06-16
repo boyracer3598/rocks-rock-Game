@@ -1,19 +1,22 @@
-using UnityEngine;
 using Kay.Data;
-using NUnit.Framework;
-using System.IO;
-using Newtonsoft.Json;
 using Mono.Cecil.Cil;
+using Newtonsoft.Json;
+using NUnit.Framework;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using TMPro;
+using UnityEngine;
 public class Rocks
 {
     public string[] RockNameList;
 }
 public class QuestDialogue : MonoBehaviour
 {
+    public TextMeshProUGUI WantQuestText;
     public KayStack<string> CompletedQuests = new();
     public Dictionary<string, string> CurrentQuest = new();
+    public Dictionary<string, string> DisplayedQuest = new();
     public string CurrentQuestText;
     public GameObject RockForQuest;
     KayStack<string> RockNames = new();
@@ -39,17 +42,24 @@ public class QuestDialogue : MonoBehaviour
         QuestTypes.Add("Combusts", "Bring me a rock that combusts");
         QuestTypes.Add("Melts", "Bring me a rock that melts");
         CurrentQuest.Add("Condition", "");
-        CurrentQuest.Add("RockNeeded", "");
+        CurrentQuest.Add("RockNeeded", "test");
+        DisplayedQuest.Add("Condition", "");
+        DisplayedQuest.Add("RockNeeded", "");
         NewQuest();
     }
-    void NewQuest()
+    public void NewQuest()
     {
         string GimmeARock = RockNames.GrabRandom();
-        string RandomQuestType = QuestTypes.ElementAt((int)Random.Range(0, QuestTypes.Count)).Key;
-        CurrentQuest["RockNeeded"] = GimmeARock;
-        CurrentQuest["Condition"] = RandomQuestType;
+        string RandomQuestType = QuestTypes.ElementAt(Random.Range(0, QuestTypes.Count)).Key;
+        DisplayedQuest["RockNeeded"] = GimmeARock;
+        DisplayedQuest["Condition"] = RandomQuestType;
+        WantQuestText.text = DisplayQuest(DisplayedQuest["RockNeeded"], DisplayedQuest["Condition"]);
+    }
+    public void AcceptQuest()
+    {
+        CurrentQuest["RockNeeded"] = DisplayedQuest["RockNeeded"];
+        CurrentQuest["Condition"] = DisplayedQuest["Condition"];
         CurrentQuestText = DisplayQuest(CurrentQuest["RockNeeded"], CurrentQuest["Condition"]);
-        Debug.Log(CurrentQuestText);
     }
     string DisplayQuest(string rock, string Condition)
     {
@@ -85,7 +95,8 @@ public class QuestDialogue : MonoBehaviour
             if (CanComplete(RockForQuest, CurrentQuest["Condition"], CurrentQuest["RockNeeded"]))
             {
                 Destroy(RockForQuest);
-                Debug.Log("winner!!!");
+                NewQuest();
+                Debug.Log("Completed Quest: " + CurrentQuestText);
             }
         }
     }
