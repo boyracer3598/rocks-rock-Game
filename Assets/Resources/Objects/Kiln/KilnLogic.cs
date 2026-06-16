@@ -13,12 +13,12 @@ public class KilnLogic : MonoBehaviour
         if (rockMeltingPoint == -1)
         {
             Destroy(rockObject);
-            Instantiate(Smoke);
+            Instantiate(Smoke, rockObject.transform.position, rockObject.transform.rotation);
         } 
-        else if (rockMeltingPoint > temperature)
+        else if (temperature >= rockMeltingPoint)
         {
             Destroy(rockObject);
-            Instantiate(LavaBeaker);
+            Instantiate(LavaBeaker, rockObject.transform.position, rockObject.transform.rotation);
         } else
         {
             Debug.Log("Not Hot Enough!!");
@@ -30,17 +30,28 @@ public class KilnLogic : MonoBehaviour
         
     }
 
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (!running && GetComponentInChildren<RockCentering>().otherObject != null)
+        if(temperature > 0 && GetComponentInChildren<RockCentering>().otherObject != null)
         {
-            Invoke(nameof(RunKiln), 5);
-            running = true;
-        } else if (running && GetComponentInChildren<RockCentering>().otherObject == null)
-        {
-            CancelInvoke(nameof(RunKiln));
-            running = false;
+            RunKiln();
+            temperature = 0;
         }
+
+        //if (!running && GetComponentInChildren<RockCentering>().otherObject != null)
+        //{
+        //    Invoke("RunKiln(GetComponentInChildren<RockCentering>().otherObject)", 5);
+        //    running = true;
+        //} else if (running && GetComponentInChildren<RockCentering>().otherObject == null)
+        //{
+
+        //    CancelInvoke("RunKiln(GetComponentInChildren<RockCentering>().otherObject)");
+        //    running = false;
+        //}
     }
 }

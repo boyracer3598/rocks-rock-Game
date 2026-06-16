@@ -10,6 +10,8 @@ TagManager:
   - Bowl1
   - Bowl2
   - NPCScientist
+  - Door
+  - Draw
   layers:
   - Default
   - TransparentFX
