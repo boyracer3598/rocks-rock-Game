@@ -9,6 +9,7 @@ TagManager:
   - Rock
   - Bowl1
   - Bowl2
+  - NPCScientist
   - Door
   - Draw
   layers:
