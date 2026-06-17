@@ -5,6 +5,7 @@ using UnityEngine;
 using static UnityEditor.FilePathAttribute;
 public class SpawnerBehaviour : MonoBehaviour
 {
+    public BoxCollider spawnArea;
     KayStack<string> RockNames = new();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,6 +35,14 @@ public class SpawnerBehaviour : MonoBehaviour
     public void SpawnRandom()
     {
         Spawn(this.RockNames.GrabRandom());
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            SpawnRandom();
+        }
+
     }
     public void KillRock()
     {

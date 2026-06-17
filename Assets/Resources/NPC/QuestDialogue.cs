@@ -86,18 +86,23 @@ public class QuestDialogue : MonoBehaviour
         else if (Condition == "Melts") return (thisRock.MeltingPoint != -1);
         else return false;
     }
+    public void CompleteQuest()
+    {
+        CompletedQuests.Append(CurrentQuestText);
+        CurrentQuest["Condition"] = "";
+        CurrentQuest["RockNeeded"] = "";
+        CurrentQuestText = "";
+        Destroy(RockForQuest);
+        NewQuest();
+        RockForQuest = null;
+    }
     // Update is called once per frame
     void Update()
     {
         RockForQuest = GetComponentInChildren<RockCentering>().otherObject;
         if (RockForQuest != null)
         {
-            if (CanComplete(RockForQuest, CurrentQuest["Condition"], CurrentQuest["RockNeeded"]))
-            {
-                Destroy(RockForQuest);
-                NewQuest();
-                Debug.Log("Completed Quest: " + CurrentQuestText);
-            }
+            if (CanComplete(RockForQuest, CurrentQuest["Condition"], CurrentQuest["RockNeeded"])) CompleteQuest();
         }
     }
 }

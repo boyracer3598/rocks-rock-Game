@@ -37,7 +37,7 @@ public class KlinKeyPad : MonoBehaviour
     public void startKiln() {
         Klin.setTemperature(int.Parse(displayTemperature));
         displayTemperature = "0";
-
+        Debug.Log("Starting Kiln at " + Klin.temperature);
     }
 
 

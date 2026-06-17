@@ -6,6 +6,7 @@ public class KilnLogic : MonoBehaviour
     public Object Smoke;
     public int temperature;
     public bool running = false;
+    public GameObject rockObject;
     void RunKiln()
     {
         GameObject rockObject = GetComponentInChildren<RockCentering>().otherObject;
@@ -37,7 +38,12 @@ public class KilnLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(temperature > 0 && GetComponentInChildren<RockCentering>().otherObject != null)
+
+        if (GetComponentInChildren<RockCentering>().otherObject != null)
+        {
+            rockObject = GetComponentInChildren<RockCentering>().otherObject;
+        }
+        if (temperature > 0 && rockObject != null)
         {
             RunKiln();
             temperature = 0;

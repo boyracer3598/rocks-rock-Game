@@ -89,6 +89,7 @@ public class MainMenu : MonoBehaviour
 
     public void listCompletledQuests()
     {
+        CompletedQuestsText.text = "";
         for (int i = 0; i < QuestManger.CompletedQuests.Size(); i++)
         {
             Debug.Log("in quest completed loop");
