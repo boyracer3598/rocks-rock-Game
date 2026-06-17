@@ -229,9 +229,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89bf18677236938458918793d66edada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JsonRegistry
+  DropSound: {fileID: 0}
   RockName: 
   RockType: 
-  WorldRegion: 
+  RockVariety: 
   Composition: 
   Density: 0
   MeltingPoint: 0
@@ -287,7 +288,7 @@ MeshRenderer:
   m_SmallMeshCulling: 1
   m_ForceMeshLod: -1
   m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 128
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 930cd7e1c200dac47a6118f16dcbb223, type: 2}

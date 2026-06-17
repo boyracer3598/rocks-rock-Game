@@ -20,7 +20,7 @@ TagManager:
   - Water
   - UI
   - Postprocessing
-  - 
+  - Outline
   - 
   - 
   - 
@@ -48,6 +48,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Outline
+    uniqueID: 2749097061
     locked: 0
   m_RenderingLayers:
   - Default
