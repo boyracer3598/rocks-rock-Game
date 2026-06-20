@@ -2,7 +2,7 @@ using Kay.Data;
 using Newtonsoft.Json;
 using System.IO;
 using UnityEngine;
-using static UnityEditor.FilePathAttribute;
+//using static UnityEditor.FilePathAttribute;
 public class SpawnerBehaviour : MonoBehaviour
 {
     public BoxCollider spawnArea;

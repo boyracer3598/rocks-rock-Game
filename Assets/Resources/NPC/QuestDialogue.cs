@@ -1,5 +1,5 @@
 using Kay.Data;
-using Mono.Cecil.Cil;
+//using Mono.Cecil.Cil;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using System.Collections.Generic;
@@ -13,17 +13,20 @@ public class Rocks
 }
 public class QuestDialogue : MonoBehaviour
 {
+    public float newQuestTime = 4f;
     public TextMeshProUGUI WantQuestText;
     public KayStack<string> CompletedQuests = new();
     public Dictionary<string, string> CurrentQuest = new();
     public Dictionary<string, string> DisplayedQuest = new();
     public string CurrentQuestText;
     public GameObject RockForQuest;
+    [SerializeField]AudioSource QuestCompleteSound;
     KayStack<string> RockNames = new();
     Dictionary<string, string> QuestTypes = new();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        QuestCompleteSound= GetComponent<AudioSource>();
         string filePathJson = "Assets/Resources/NPC/RockList.json";
         string[] fileText = File.ReadAllLines(filePathJson);
         string fileTextOneLine = "";
@@ -89,13 +92,19 @@ public class QuestDialogue : MonoBehaviour
     public void CompleteQuest()
     {
         CompletedQuests.Append(CurrentQuestText);
+        QuestCompleteSound.Play();
+        WantQuestText.text = "!!Quest Completed!!";
+        Debug.Log("Completed quest: " + CurrentQuestText);
         CurrentQuest["Condition"] = "";
         CurrentQuest["RockNeeded"] = "";
         CurrentQuestText = "";
         Destroy(RockForQuest);
-        NewQuest();
+        Invoke("NewQuest", newQuestTime);
         RockForQuest = null;
     }
+
+   
+
     // Update is called once per frame
     void Update()
     {

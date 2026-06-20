@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1085527830016485388}
   - component: {fileID: 787505324782884909}
   - component: {fileID: 3277771456774723821}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Draw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ ConfigurableJoint:
     spring: 0.3
     damper: 1
   m_LinearLimit:
-    limit: 0.1
+    limit: 0.15
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
