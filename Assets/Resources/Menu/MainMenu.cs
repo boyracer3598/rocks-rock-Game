@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
     public GameObject CurrentQuestMenu;
     public GameObject CompletedQuestsMenu;
     public QuestDialogue QuestManger;
+    public TextMeshProUGUI MenuTitle;
     public TextMeshProUGUI CurrentQuestText;
     public TextMeshProUGUI CompletedQuestsText;
     public InputActionReference toggleMenuAction;
@@ -68,6 +69,7 @@ public class MainMenu : MonoBehaviour
 
     public void Back()
     {
+        MenuTitle.text = "Main Menu";
         MainMenuUI.SetActive(true);
         CurrentQuestMenu.SetActive(false);
         CompletedQuestsMenu.SetActive(false);
@@ -75,6 +77,7 @@ public class MainMenu : MonoBehaviour
 
     public void ToggleCompletedQuests()
     {
+        MenuTitle.text = "Completed Quests";
         MainMenuUI.SetActive(false);
         CurrentQuestMenu.SetActive(false);
         CompletedQuestsMenu.SetActive(true);
@@ -82,6 +85,7 @@ public class MainMenu : MonoBehaviour
 
     public void ToggleCurrentQuest()
     {
+        MenuTitle.text = "Current Quest";
         MainMenuUI.SetActive(false);
         CurrentQuestMenu.SetActive(true);
         CompletedQuestsMenu.SetActive(false);
@@ -92,8 +96,8 @@ public class MainMenu : MonoBehaviour
         CompletedQuestsText.text = "";
         for (int i = 0; i < QuestManger.CompletedQuests.Size(); i++)
         {
-            Debug.Log("in quest completed loop");
-            CompletedQuestsText.text += QuestManger.CompletedQuests.Grab(i) + "\n";
+            
+            CompletedQuestsText.text += QuestManger.CompletedQuests.Grab(i) + "\n\n";
         }
 
 
