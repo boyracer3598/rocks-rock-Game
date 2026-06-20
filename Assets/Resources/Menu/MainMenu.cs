@@ -22,21 +22,24 @@ public class MainMenu : MonoBehaviour
     public Slider LightLevelSlider;
     public Slider voluneSlider;
     public Volume PostProcessing;
-    
-    public float lightLevel = 0.5f;
-    public float volumeLevel = 0.5f;
+
+    public float lightLevel;
+    public float volumeLevel;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         toggleMenuAction.action.Enable();
         toggleMenuAction.action.performed += ToggleMenu;
+        lightLevel = LightLevelSlider.minValue / 2;
         LightLevelSlider.value = lightLevel;
+        volumeLevel = PlayerPrefs.GetFloat("Volume", 1);
         voluneSlider.value = volumeLevel;
 
         // Add listeners to the sliders to update the light and volume levels when they are changed
         LightLevelSlider.onValueChanged.AddListener(delegate { LightLevelChange(); });
         voluneSlider.onValueChanged.AddListener(delegate { VolumeLevelChange(); });
         audioMixer.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("Volume", 1)) * 20);// Set the initial volume level based on saved preferences
+        PostProcessing.weight = 1 - lightLevel;
     }
 
     void ToggleMenu(InputAction.CallbackContext context)
@@ -53,7 +56,8 @@ public class MainMenu : MonoBehaviour
     public void VolumeLevelChange()
     {
         volumeLevel = voluneSlider.value;
-        audioMixer.SetFloat("Volume", Mathf.Log10(volumeLevel) * 20);
+        if(volumeLevel < 0.01f) volumeLevel = 0.01f; // Prevent logarithm of zero or negative numbers
+        else audioMixer.SetFloat("Volume", Mathf.Log10(volumeLevel) * 20);
         PlayerPrefs.SetFloat("Volume", volumeLevel); // Save the volume level to player preferences
         PlayerPrefs.Save(); // Save the player preferences to disk
     }

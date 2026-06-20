@@ -28,11 +28,11 @@ AudioRandomContainer:
   m_PrefabAsset: {fileID: 0}
   m_Name: Complete Quest
   m_Volume: 0
-  m_Pitch: 0
+  m_Pitch: -12
   m_AutomaticTriggerTime: 0
   m_LoopCount: 1
   m_VolumeRandomizationRange: {x: 0, y: 0}
-  m_PitchRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: 0, y: 277.2277}
   m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
   m_LoopCountRandomizationRange: {x: 0, y: 0}
   m_Elements:
@@ -40,10 +40,10 @@ AudioRandomContainer:
   - {fileID: -9114772780581206879}
   m_AvoidRepeatingLast: 0
   m_PlaybackMode: 1
-  m_TriggerMode: 1
+  m_TriggerMode: 0
   m_AutomaticTriggerMode: 1
   m_LoopMode: 2
   m_VolumeRandomizationEnabled: 0
-  m_PitchRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 1
   m_AutomaticTriggerTimeRandomizationEnabled: 0
   m_LoopCountRandomizationEnabled: 0

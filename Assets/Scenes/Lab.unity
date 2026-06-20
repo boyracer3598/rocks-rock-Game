@@ -8404,6 +8404,18 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 9133328024503202123, guid: 30546bf41d25268448f5dee51e303fe9, type: 3}
+      propertyPath: m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9133328024503202123, guid: 30546bf41d25268448f5dee51e303fe9, type: 3}
+      propertyPath: m_MaxValue
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9133328024503202123, guid: 30546bf41d25268448f5dee51e303fe9, type: 3}
+      propertyPath: m_WholeNumbers
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8539,7 +8551,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 16e7ae75c73fc744183f1d9ce562b2c6, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 6418180475301049370, guid: fcde301fb79299547bd1a2d03313e03e, type: 2}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -8642,6 +8654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb24e12492d3201498b06009bb138e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestDialogue
+  newQuestTime: 4
   WantQuestText: {fileID: 957977272}
   CurrentQuestText: 
   RockForQuest: {fileID: 0}

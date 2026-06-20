@@ -13,6 +13,7 @@ public class Rocks
 }
 public class QuestDialogue : MonoBehaviour
 {
+    public float newQuestTime = 4f;
     public TextMeshProUGUI WantQuestText;
     public KayStack<string> CompletedQuests = new();
     public Dictionary<string, string> CurrentQuest = new();
@@ -92,14 +93,18 @@ public class QuestDialogue : MonoBehaviour
     {
         CompletedQuests.Append(CurrentQuestText);
         QuestCompleteSound.Play();
+        WantQuestText.text = "!!Quest Completed!!";
         Debug.Log("Completed quest: " + CurrentQuestText);
         CurrentQuest["Condition"] = "";
         CurrentQuest["RockNeeded"] = "";
         CurrentQuestText = "";
         Destroy(RockForQuest);
-        NewQuest();
+        Invoke("NewQuest", newQuestTime);
         RockForQuest = null;
     }
+
+   
+
     // Update is called once per frame
     void Update()
     {
