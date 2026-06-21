@@ -43,7 +43,7 @@ public class Rock : MonoBehaviour
     public void Refresh()
     {
 
-        string filePathJson = "Assets/Resources/Rocks/Data/" + fileName + ".json";
+        string filePathJson = Application.streamingAssetsPath +"/Data/" + fileName + ".json";
         string filePathMesh = "Rocks/models/FBX/" + fileName;
         string filePathMaterial = "Rocks/Materials/" + fileName;
         string[] fileText = File.ReadAllLines(filePathJson);
@@ -60,10 +60,27 @@ public class Rock : MonoBehaviour
         this.Density = temp.Density;
         this.MeltingPoint = temp.MeltingPoint;
         // Debug.Log(RockName + ", " + RockType + ", " + RockVariety + ", " + Composition + ", " + Density + ", " + MeltingPoint);
-        Material newMaterial = (Material)Resources.Load(filePathMaterial);
+        //Debug.Log(filePathMesh);
+        //Debug.Log(filePathMaterial);
+        Material newMaterial = (Material)Resources.Load(filePathMaterial) as Material;
         GetComponent<Renderer>().material = newMaterial;
-        GameObject model = Resources.Load<GameObject>(filePathMesh);
-        GetComponent<MeshFilter>().sharedMesh = model.GetComponent<MeshFilter>().sharedMesh;
+       
+
+        
+        GameObject model = Resources.Load(filePathMesh) as GameObject;
+
+        if (model.GetComponent<MeshFilter>().sharedMesh!=null) {
+            GetComponent<MeshFilter>().mesh = model.GetComponent<MeshFilter>().sharedMesh;
+        }
+        else Debug.Log("File does not exist: "+ filePathMesh);
+        //GetComponent<MeshFilter>();
+        //GetComponent<MeshFilter>().mesh = model.GetComponent<MeshFilter>().mesh;
+
+        
+        
+
+
+
         this.gameObject.name = temp.RockName;
     }
 }

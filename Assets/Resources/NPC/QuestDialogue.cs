@@ -27,7 +27,7 @@ public class QuestDialogue : MonoBehaviour
     void Start()
     {
         QuestCompleteSound= GetComponent<AudioSource>();
-        string filePathJson = "Assets/Resources/NPC/RockList.json";
+        string filePathJson = Application.streamingAssetsPath+"/RockList.json";
         string[] fileText = File.ReadAllLines(filePathJson);
         string fileTextOneLine = "";
         for (int i = 0; i < fileText.Length; i++)
@@ -74,7 +74,7 @@ public class QuestDialogue : MonoBehaviour
     bool CanComplete(GameObject Rock, string Condition, string rockNeeded)
     {
         Rock thisRock = Rock.GetComponent<Rock>();
-        string filePathJson = "Assets/Resources/Rocks/Data/" + rockNeeded + ".json";
+        string filePathJson = Application.streamingAssetsPath + "/Data/" + rockNeeded + ".json";
         string[] fileText = File.ReadAllLines(filePathJson);
         string fileTextOneLine = "";
         for (int i = 0; i < fileText.Length; i++)
